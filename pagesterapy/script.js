@@ -201,7 +201,6 @@ document.getElementById("clear-btn").addEventListener("click", () => {
   generatePreviousTextAnamnez();
   generatePreviousTextObjectyvno();
   generatePrevTObstezenny();
-  localStorage.clear();
 });
 document.getElementById("all-in").addEventListener("click", () => {
   historyList = {
