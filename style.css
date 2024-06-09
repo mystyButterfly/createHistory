@@ -1,0 +1,108 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+}
+body{
+  background: rgb(255,223,0);
+  background: linear-gradient(90deg, rgba(255, 221, 0, 0.794) 0%, rgba(255, 102, 0, 0.776) 99%, rgba(255,144,0,1) 100%);;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+}
+.header-label{
+  background-color: rgb(0, 0, 0);
+  padding: 5px 10px;
+  border-radius: 40px;
+  width: max-content;
+  display: flex;
+  align-items: center;
+}
+.header-label img{
+  width: 20px;
+  height: 20px;
+  display: flex;
+  padding-right: 3px;
+}
+.header-label h3{
+  color: white;
+  display: flex;
+  font-size: 30px;
+}
+.header-slogan{
+  display: flex
+}
+.save-time{
+  text-align: center;
+}
+.save-time-article{
+  padding: 10px;
+}
+.images{
+  margin: 0px 20px;
+  width: fit-content;
+  margin-inline: auto;
+}
+.field{
+  display: inline-block;
+  width: 550px;
+  height: 300px;
+  margin: 10px;
+  border-radius: 10px;
+}
+.field h3{
+  padding: 10px 50px;
+  width: fit-content;
+  background: white;
+  border-radius: 50px;
+  margin: 0 auto;
+  margin-top: 130px;
+}
+.field h3:hover{
+  cursor: pointer;
+  background: rgb(246, 245, 245);
+}
+.terapy-field{
+  background-image: url(./imagesMain/terapy.jpeg);
+}
+.surgery-field{
+  background-image: url(./imagesMain/surgery.jpg);
+}
+.additional{
+  font-size: 1.5rem;
+  text-align: center;
+}
+.additional h2{
+  margin: 20px;
+}
+.add{
+  display: inline-flex;
+  align-items: start;
+}
+.add img{
+  width: 150px;
+  display: inline-block;
+  margin: 5px;
+}
+.add img:hover{
+  cursor: pointer;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.206);
+}
+.add h3{
+  display: inline-block;
+  font-weight: 400;
+}
+footer{
+  background-color: rgb(40, 32, 129);
+  color: white;
+  text-align: center;
+  padding: 40px;
+  margin-top: 20px;
+}
