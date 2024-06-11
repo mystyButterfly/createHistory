@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Get All Dates Between Two Custom Dates</title>
+  </head>
+  <body>
+    <div>
+      <h2>Щоденник:</h2>
+      <span>
+        Початкова дата: <input type="date" id="startDate" /><br />
+        Кінцева дата:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+          type="date"
+          id="endDate"
+        />
+      </span>
+      <button onclick="getAllDates()"><b>Написати щоденник</b></button>
+    </div>
+
+    <p id="filteredResult"></p>
+
+    <script>
+      let disease = {
+        d: "Hipertonia",
+      };
+      function getAllDates() {
+        const startDate = new Date(document.getElementById("startDate").value);
+        const endDate = new Date(document.getElementById("endDate").value);
+
+        const datesList = [];
+        const secondDatesList = [];
+        const finalResult = [];
+        let currentDate = new Date(startDate);
+
+        while (currentDate <= endDate) {
+          datesList.push(new Date(currentDate));
+          currentDate.setDate(currentDate.getDate() + 1);
+        }
+
+        const filteredDates = datesList.filter(
+          (date) => date.getDay() !== 2 && date.getDay() !== 4
+        ); // remove 2 and 4
+        secondDatesList.push(filteredDates);
+
+        // mark day
+        secondDatesList[0].forEach((date) => {
+          if (date.getDay() === 0 || date.getDay() === 6) {
+            finalResult.push(
+              `${date.toLocaleDateString()} Огляд чергового лікаря. Лікування згідно з листком призначень.`
+            );
+          } else {
+            finalResult.push(
+              `${date.toLocaleDateString()} Скарги типові ${disease.d}`
+            );
+          }
+        });
+        document.getElementById("filteredResult").innerText =
+          finalResult.join("\n");
+      }
+    </script>
+  </body>
+</html>
