@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header style="padding: 10px">
+      <a href="../index.html"
+        ><div class="header-label">
+          <img src="../imagesMain/Sun.png" alt="" />
+          <h3>NAVICENNA</h3>
+        </div></a
+      >
+      <div class="header-slogan">IT'S TIME FOR YOU WORK EASIER</div>
+    </header>
+    <div class="chose-variant">
+      <h3>Оберіть розділ:</h3>
+      <a href="./terapyhistory.html"><h2>Огляд</h2></a>
+      <a href="./dayLog.html"><h2>Щоденник</h2></a>
+      <a href="./epicris.html"><h2>Виписка</h2></a>
+    </div>
+    <div class="createDayLog">
+    <h2>Щоденник:</h2>
+    <span>
+      Початкова дата: <input type="date" id="startDate" /><br />
+      Кінцева дата:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+        type="date"
+        id="endDate"
+      />
+    </span>
+    <button onclick="getAllDates()"><b>Написати щоденник</b></button>
+    <button onclick="copyDayLog()">Копіювати</button>
+  </div>
+
+    <div class="showDayLog"  id="filteredResult"></div>
+    <footer>
+      Телефон: 0974587854<br />
+      Пошта: navicenna@mail.com
+    </footer>
+    <script src="./scriptAnammnez.js"></script>
+    <script src="./scriptObjectyvno.js"></script>
+    <script src="./script.js"></script>
+    <script src="./planObstezeny.js"></script>
+    <script src="./dayLog.js"></script>
+    <script src="./epicris.js"></script>
+  </body>
+</html>
