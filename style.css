@@ -7,8 +7,12 @@ a{
   text-decoration: none;
 }
 body{
-  background: rgb(255,223,0);
-  background: linear-gradient(90deg, rgba(255, 221, 0, 0.794) 0%, rgba(255, 102, 0, 0.776) 99%, rgba(255,144,0,1) 100%);;
+  /* background: rgb(255,223,0);
+  background: linear-gradient(90deg, rgba(255, 221, 0, 0.794) 0%, rgba(255, 102, 0, 0.776) 99%, rgba(255,144,0,1) 100%);; */
+  background-color: rgb(255, 255, 255);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header{
@@ -102,7 +106,11 @@ header{
 footer{
   background-color: rgb(40, 32, 129);
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75px;
+  width: 100%;
+  margin-top: auto;
   text-align: center;
-  padding: 40px;
-  margin-top: 20px;
 }
