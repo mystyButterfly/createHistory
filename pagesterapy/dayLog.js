@@ -94,5 +94,4 @@ ${historyListObjectivno.generalLevel}`+` Шкірні покриви: чисті
   });
   document.getElementById("filteredResult").innerHTML =
     finalResult.join(`<div></div><br/>`)+'<div></div><br/>'+"Пацієнт виписується додому з рекомендаціями сімейному лікарю.";
-    console.log(datesList)
 }
