@@ -6,6 +6,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header style="padding: 10px">
@@ -34,13 +38,44 @@
     </span>
     <button onclick="getAllDates()"><b>Написати щоденник</b></button>
     <button onclick="copyDayLog()">Копіювати</button>
+    <button onclick="printDivContent()">Друк</button>
+
   </div>
 
-    <div class="showDayLog"  id="filteredResult"></div>
+    <!-- <div class="showDayLog"  id="filteredResult"></div> -->
+     <!-- Create the editor container -->
+    <div id="container">
+      <div id="editor">
+        <br />
+      </div>
+    </div>
+
+    <!-- Include the Quill library -->
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+
+
+
     <footer>
       Телефон: 0974587854<br />
       Пошта: navicenna@mail.com
     </footer>
+        <!-- Initialize Quill editor -->
+    <script>
+      const quill = new Quill("#editor", {
+        theme: "snow",
+      });
+
+      function printDivContent() {
+        var divElementContents = quill.root.innerHTML
+        var windows = window.open('', 'Щоденник', 'height=500, width=500');
+        windows.document.write('<html><head><style>body { white-space: pre-line; }</style></head>');
+        windows.document.write('<body >');
+        windows.document.write(divElementContents);
+        windows.document.write('</body></html>');
+        windows.document.close();
+        windows.print();
+      }
+    </script>
     <script src="./scriptAnammnez.js"></script>
     <script src="./scriptObjectyvno.js"></script>
     <script src="./script.js"></script>
