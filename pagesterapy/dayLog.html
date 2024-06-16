@@ -65,10 +65,10 @@
         theme: "snow",
       });
 
-      function printDivContent() {
+function printDivContent() {
         var divElementContents = quill.root.innerHTML
-        var windows = window.open('', 'Щоденник', 'height=500, width=500');
-        windows.document.write('<html><head><style>body { white-space: pre-line; }</style></head>');
+        var windows = window.open('', '', 'height=500, width=500');
+        windows.document.write('<html><head><title>Щоденник - друк</title><style>body { white-space: pre-line; }</style></head>');
         windows.document.write('<body >');
         windows.document.write(divElementContents);
         windows.document.write('</body></html>');
