@@ -8,6 +8,7 @@ function getAllDates() {
   let currentDate = new Date(startDate);
   let withZavVidWekkend = false;
   let etapnyjEpicris = false;
+  
 
   while (currentDate <= endDate) {
     datesList.push(new Date(currentDate));
@@ -52,11 +53,11 @@ secondDatesList.push(datesList[datesList.length - 1]); // Add the last element
       if(withZavVid&&date === datesList[1]){
       withZavVidWekkend = false; //2-nd day
       finalResult.push(
-      `${date.toLocaleDateString()}`+`Спільний огляд із завідувачем відділення.<br/><div>
-      </div>`+`${historyList.skargy.skargyLabel?" Скарги:":""} ${historyList.skargy.hardbeet ?"прискорене серцебиття," : ""} ${historyList.skargy.zagrydinoj ? "дискомфорт у грудній клітці," : ""} ${historyList.skargy.weeknes ? "слабкість," : ""} ${historyList.skargy.zapamoroch ?"запаморочення," : ""} ${historyList.skargy.defpuls ? "дефіцит пульсу," : ""} ${historyList.skargy.viraslab ? "виражена загальна слабкість," : ""}${ historyList.skargy.vtomluvanist ? "втомлюваність," : ""} ${historyList.skargy.zadiskaNyha? "задишка під час фізичного навантаження NYHA _": ""}.`+`${historyListObjectivno.objectyvnoMain?(`
+      `${date.toLocaleDateString()}`+` Спільний огляд із завідувачем відділення.`+`
+      ${historyList.skargy.skargyLabel?" Скарги:":""} ${historyList.skargy.hardbeet ?"прискорене серцебиття," : ""} ${historyList.skargy.zagrydinoj ? "дискомфорт у грудній клітці," : ""} ${historyList.skargy.weeknes ? "слабкість," : ""} ${historyList.skargy.zapamoroch ?"запаморочення," : ""} ${historyList.skargy.defpuls ? "дефіцит пульсу," : ""} ${historyList.skargy.viraslab ? "виражена загальна слабкість," : ""}${ historyList.skargy.vtomluvanist ? "втомлюваність," : ""} ${historyList.skargy.zadiskaNyha? "задишка під час фізичного навантаження NYHA _": ""}.`+`${historyListObjectivno.objectyvnoMain?(`
       
-      <br/><br/>Дані об’єктивного обстеження:`+`	
-${historyListObjectivno.generalLevel}`+` Шкірні покриви: чисті; Підшкірні лімфатичні вузли: не пальпуються; Щитоподібна залоза: не збільшена; `+`${historyListObjectivno.nabraki}`+`Серцево-судинна система: тони аритмічні, приглушені,  АТ 130/70 мм/рт/ст.`+` ЧСС ${createNumber(1, 10)+60} уд/хв;  Дихальна система:  Аускультація: дихання жорстке, хрипи відсутні; Перкуторний звук - ясний легеневий, дещо притуплений в нижніх частках обох легень;`+`ЧД ${createNumber(1, 4)+15} вд/хв; `+` Сатурація ${createNumber(2, 5)+93}%;`+`Травна система: язик вологий, чистий; живіт при пальпації м'який не болючий. Печінка на рівні реб. дуги; при пальпації не болюча, селезінка не пальпується. Кістково-суглобова система: набряки немає; `+`${historyListObjectivno.skargyKolinDefig||historyListObjectivno.skargyKolinPain||historyListObjectivno.skargyKolinClick?"Колінні суглоби: ":""} ${historyListObjectivno.skargyKolinDefig?"дефігурація;":""} ${historyListObjectivno.skargyKolinPain?"біль;":""} ${historyListObjectivno.skargyKolinClick?"хруст;":""}  Об'єм рухів: відповідно до віку. С-м. Пастернацького: негативний з обох сторін; Фіз. відправлення в нормі.<br/>
+      Дані об’єктивного обстеження:`+`	
+${historyListObjectivno.generalLevel}`+` Шкірні покриви: чисті; Підшкірні лімфатичні вузли: не пальпуються; Щитоподібна залоза: не збільшена; `+`${historyListObjectivno.nabraki}`+`Серцево-судинна система: тони аритмічні, приглушені,  АТ 130/70 мм/рт/ст.`+` ЧСС ${createNumber(1, 10)+60} уд/хв;  Дихальна система:  Аускультація: дихання жорстке, хрипи відсутні; Перкуторний звук - ясний легеневий, дещо притуплений в нижніх частках обох легень;`+`ЧД ${createNumber(1, 4)+15} вд/хв; `+` Сатурація ${createNumber(2, 5)+93}%;`+`Травна система: язик вологий, чистий; живіт при пальпації м'який не болючий. Печінка на рівні реб. дуги; при пальпації не болюча, селезінка не пальпується. Кістково-суглобова система: набряки немає; `+`${historyListObjectivno.skargyKolinDefig||historyListObjectivno.skargyKolinPain||historyListObjectivno.skargyKolinClick?"Колінні суглоби: ":""} ${historyListObjectivno.skargyKolinDefig?"дефігурація;":""} ${historyListObjectivno.skargyKolinPain?"біль;":""} ${historyListObjectivno.skargyKolinClick?"хруст;":""}  Об'єм рухів: відповідно до віку. С-м. Пастернацького: негативний з обох сторін; Фіз. відправлення в нормі.
 Лікування згідно з листком призначень.
 
 `):""}`
@@ -65,13 +66,13 @@ ${historyListObjectivno.generalLevel}`+` Шкірні покриви: чисті
     if(etapnyjEpicris||(date === datesList[10])||(date === datesList[20])||(date === datesList[30])){
        //10-th day
       finalResult.push(
-      `${date.toLocaleDateString()}`+`Етапний епікриз.<br/><div>
-      </div>`+`${historyList.skargy.skargyLabel?" Скарги:":""} ${historyList.skargy.hardbeet ?"прискорене серцебиття," : ""} ${historyList.skargy.zagrydinoj ? "дискомфорт у грудній клітці," : ""} ${historyList.skargy.weeknes ? "слабкість," : ""} ${historyList.skargy.zapamoroch ?"запаморочення," : ""} ${historyList.skargy.defpuls ? "дефіцит пульсу," : ""} ${historyList.skargy.viraslab ? "виражена загальна слабкість," : ""}${ historyList.skargy.vtomluvanist ? "втомлюваність," : ""} ${historyList.skargy.zadiskaNyha? "задишка під час фізичного навантаження NYHA _": ""}.`+`${historyListObjectivno.objectyvnoMain?(`
+      `${date.toLocaleDateString()}`+` Етапний епікриз.`+`
+      ${historyList.skargy.skargyLabel?" Скарги:":""} ${historyList.skargy.hardbeet ?"прискорене серцебиття," : ""} ${historyList.skargy.zagrydinoj ? "дискомфорт у грудній клітці," : ""} ${historyList.skargy.weeknes ? "слабкість," : ""} ${historyList.skargy.zapamoroch ?"запаморочення," : ""} ${historyList.skargy.defpuls ? "дефіцит пульсу," : ""} ${historyList.skargy.viraslab ? "виражена загальна слабкість," : ""}${ historyList.skargy.vtomluvanist ? "втомлюваність," : ""} ${historyList.skargy.zadiskaNyha? "задишка під час фізичного навантаження NYHA _": ""}.`+`${historyListObjectivno.objectyvnoMain?(`
       
-      <br/><br/>Дані об’єктивного обстеження:`+`	
-${historyListObjectivno.generalLevel}`+` Шкірні покриви: чисті; Підшкірні лімфатичні вузли: не пальпуються; Щитоподібна залоза: не збільшена; `+`${historyListObjectivno.nabraki}`+`Серцево-судинна система: тони аритмічні, приглушені,  АТ 130/70 мм/рт/ст.`+` ЧСС ${createNumber(1, 10)+60} уд/хв;  Дихальна система:  Аускультація: дихання жорстке, хрипи відсутні; Перкуторний звук - ясний легеневий, дещо притуплений в нижніх частках обох легень;`+`ЧД ${createNumber(1, 4)+15} вд/хв; `+` Сатурація ${createNumber(2, 5)+93}%;`+`Травна система: язик вологий, чистий; живіт при пальпації м'який не болючий. Печінка на рівні реб. дуги; при пальпації не болюча, селезінка не пальпується. Кістково-суглобова система: набряки немає; `+`${historyListObjectivno.skargyKolinDefig||historyListObjectivno.skargyKolinPain||historyListObjectivno.skargyKolinClick?"Колінні суглоби: ":""} ${historyListObjectivno.skargyKolinDefig?"дефігурація;":""} ${historyListObjectivno.skargyKolinPain?"біль;":""} ${historyListObjectivno.skargyKolinClick?"хруст;":""}  Об'єм рухів: відповідно до віку. С-м. Пастернацького: негативний з обох сторін; Фіз. відправлення в нормі.<br/>
+      Дані об’єктивного обстеження:`+`	
+${historyListObjectivno.generalLevel}`+` Шкірні покриви: чисті; Підшкірні лімфатичні вузли: не пальпуються; Щитоподібна залоза: не збільшена; `+`${historyListObjectivno.nabraki}`+`Серцево-судинна система: тони аритмічні, приглушені,  АТ 130/70 мм/рт/ст.`+` ЧСС ${createNumber(1, 10)+60} уд/хв;  Дихальна система:  Аускультація: дихання жорстке, хрипи відсутні; Перкуторний звук - ясний легеневий, дещо притуплений в нижніх частках обох легень;`+`ЧД ${createNumber(1, 4)+15} вд/хв; `+` Сатурація ${createNumber(2, 5)+93}%;`+`Травна система: язик вологий, чистий; живіт при пальпації м'який не болючий. Печінка на рівні реб. дуги; при пальпації не болюча, селезінка не пальпується. Кістково-суглобова система: набряки немає; `+`${historyListObjectivno.skargyKolinDefig||historyListObjectivno.skargyKolinPain||historyListObjectivno.skargyKolinClick?"Колінні суглоби: ":""} ${historyListObjectivno.skargyKolinDefig?"дефігурація;":""} ${historyListObjectivno.skargyKolinPain?"біль;":""} ${historyListObjectivno.skargyKolinClick?"хруст;":""}  Об'єм рухів: відповідно до віку. С-м. Пастернацького: негативний з обох сторін; Фіз. відправлення в нормі.
 Пацієнт продовжує лікуватись з ${date === datesList[10] ? datesList[11].toLocaleDateString():''}${date === datesList[20] ? datesList[21].toLocaleDateString():''}${date === datesList[30] ? datesList[31].toLocaleDateString():''}
-<br/>Лікування згідно з листком призначень.
+Лікування згідно з листком призначень.
 
 `):""}`
     );
@@ -80,10 +81,10 @@ ${historyListObjectivno.generalLevel}`+` Шкірні покриви: чисті
       withZavVid = true;
       
       finalResult.push(
-        `${date.toLocaleDateString()}`+`${withZavVidWekkend?"Спільний огляд із завідувачем відділення.<br/><div></div>":""}`+`${historyList.skargy.skargyLabel?" Скарги:":""} ${historyList.skargy.hardbeet ?"прискорене серцебиття," : ""} ${historyList.skargy.zagrydinoj ? "дискомфорт у грудній клітці," : ""} ${historyList.skargy.weeknes ? "слабкість," : ""} ${historyList.skargy.zapamoroch ?"запаморочення," : ""} ${historyList.skargy.defpuls ? "дефіцит пульсу," : ""} ${historyList.skargy.viraslab ? "виражена загальна слабкість," : ""}${ historyList.skargy.vtomluvanist ? "втомлюваність," : ""} ${historyList.skargy.zadiskaNyha? "задишка під час фізичного навантаження NYHA _": ""}.`+`${historyListObjectivno.objectyvnoMain?(`
+        `${date.toLocaleDateString()}`+`${withZavVidWekkend?"Спільний огляд із завідувачем відділення.<div></div>":""}`+`${historyList.skargy.skargyLabel?" Скарги:":""} ${historyList.skargy.hardbeet ?"прискорене серцебиття," : ""} ${historyList.skargy.zagrydinoj ? "дискомфорт у грудній клітці," : ""} ${historyList.skargy.weeknes ? "слабкість," : ""} ${historyList.skargy.zapamoroch ?"запаморочення," : ""} ${historyList.skargy.defpuls ? "дефіцит пульсу," : ""} ${historyList.skargy.viraslab ? "виражена загальна слабкість," : ""}${ historyList.skargy.vtomluvanist ? "втомлюваність," : ""} ${historyList.skargy.zadiskaNyha? "задишка під час фізичного навантаження NYHA _": ""}.`+`${historyListObjectivno.objectyvnoMain?(`
         
-        <br/><br/>Дані об’єктивного обстеження:`+`	
-${historyListObjectivno.generalLevel}`+` Шкірні покриви: чисті; Підшкірні лімфатичні вузли: не пальпуються; Щитоподібна залоза: не збільшена; `+`${historyListObjectivno.nabraki}`+`Серцево-судинна система: тони аритмічні, приглушені,  АТ 130/70 мм/рт/ст.`+` ЧСС ${createNumber(1, 10)+60} уд/хв;  Дихальна система:  Аускультація: дихання жорстке, хрипи відсутні; Перкуторний звук - ясний легеневий, дещо притуплений в нижніх частках обох легень;`+`ЧД ${createNumber(1, 4)+15} вд/хв; `+` Сатурація ${createNumber(2, 5)+93}%;`+`Травна система: язик вологий, чистий; живіт при пальпації м'який не болючий. Печінка на рівні реб. дуги; при пальпації не болюча, селезінка не пальпується. Кістково-суглобова система: набряки немає; `+`${historyListObjectivno.skargyKolinDefig||historyListObjectivno.skargyKolinPain||historyListObjectivno.skargyKolinClick?"Колінні суглоби: ":""} ${historyListObjectivno.skargyKolinDefig?"дефігурація;":""} ${historyListObjectivno.skargyKolinPain?"біль;":""} ${historyListObjectivno.skargyKolinClick?"хруст;":""}  Об'єм рухів: відповідно до віку. С-м. Пастернацького: негативний з обох сторін; Фіз. відправлення в нормі.<br/>
+        Дані об’єктивного обстеження:`+`	
+${historyListObjectivno.generalLevel}`+` Шкірні покриви: чисті; Підшкірні лімфатичні вузли: не пальпуються; Щитоподібна залоза: не збільшена; `+`${historyListObjectivno.nabraki}`+`Серцево-судинна система: тони аритмічні, приглушені,  АТ 130/70 мм/рт/ст.`+` ЧСС ${createNumber(1, 10)+60} уд/хв;  Дихальна система:  Аускультація: дихання жорстке, хрипи відсутні; Перкуторний звук - ясний легеневий, дещо притуплений в нижніх частках обох легень;`+`ЧД ${createNumber(1, 4)+15} вд/хв; `+` Сатурація ${createNumber(2, 5)+93}%;`+`Травна система: язик вологий, чистий; живіт при пальпації м'який не болючий. Печінка на рівні реб. дуги; при пальпації не болюча, селезінка не пальпується. Кістково-суглобова система: набряки немає; `+`${historyListObjectivno.skargyKolinDefig||historyListObjectivno.skargyKolinPain||historyListObjectivno.skargyKolinClick?"Колінні суглоби: ":""} ${historyListObjectivno.skargyKolinDefig?"дефігурація;":""} ${historyListObjectivno.skargyKolinPain?"біль;":""} ${historyListObjectivno.skargyKolinClick?"хруст;":""}  Об'єм рухів: відповідно до віку. С-м. Пастернацького: негативний з обох сторін; Фіз. відправлення в нормі.
 Лікування згідно з листком призначень.
 
 `):""}`
@@ -92,6 +93,6 @@ ${historyListObjectivno.generalLevel}`+` Шкірні покриви: чисті
     }}
     withZavVid = true;
   });
-  document.getElementById("filteredResult").innerHTML =
-    finalResult.join(`<div></div><br/>`)+'<div></div><br/>'+"Пацієнт виписується додому з рекомендаціями сімейному лікарю.";
+  quill.root.innerHTML =
+    finalResult.join(`<div></div>`)+'<div></div>'+"Пацієнт виписується додому з рекомендаціями сімейному лікарю.";
 }
