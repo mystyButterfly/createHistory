@@ -33,7 +33,8 @@ function readFromLocalStorage() {
 
 function generatePrevTObstezenny(){
   document.getElementById("prevTextPlanObstez").innerText = `${historyListObstezenny.Label?"План обстеження: ":""} ${historyListObstezenny.zak?"Загальний аналіз крові;":""} ${historyListObstezenny.zas?"Загальний аналіз сечі;":""} ${historyListObstezenny.bx?"Біохімічний аналіз крові???;":""} ${historyListObstezenny.kalYH?"Ан. калу на я/г;":""} ${historyListObstezenny.krowCukor?"Кров на цукор;":""} ${historyListObstezenny.ekg?"ЕКГ,":""} ${historyListObstezenny.exoKG?"ЕхоКГ,":""} ${historyListObstezenny.troponini?"тропоніновий тест;":""} ${historyListObstezenny.rengenHrydnoj?"РГ (ОГК);":""} ${historyListObstezenny.YZDzivota?"УЗД ОЧП;":""}${historyListObstezenny.YZDtir?"УЗД щитоподібної залози;":""} ${historyListObstezenny.konsyltaciaKardio?"Консультація кардіолога.":""} ${historyListObstezenny.konsyltaciaSurgery?"Консультація xipypгa. ":""}${historyListObstezenny.konsyltaciaEndokr?"Консультація ендокринолога. ":""}${historyListObstezenny.konsyltaciaNevrolog?"Консультація невролога. ":""}`
-  if(historyListObstezenny.likyvanna){document.getElementById("prevTextPlanLikyvanny1").innerText =`План лікування: режим палатний;`;
+  if(historyListObstezenny.likyvanna){document.getElementById("prevTextPlanLikyvanny1").innerText =`
+  План лікування: режим палатний;`;
     document.getElementById("prevTextPlanLikyvanny2").innerText ="Лікування: дієта № 10";
     document.getElementById("prevTextPlanLikyvanny3").innerText ="ЛФК по режиму ІІ";
     document.getElementById("prevTextPlanLikyvanny4").innerText ="Лікування згідно з листком призначень"
