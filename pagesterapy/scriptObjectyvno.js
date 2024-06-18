@@ -62,7 +62,9 @@ function generatePreviousTextObjectyvno() {
     : (document.getElementById("prevTextEKG").innerText = "");
 
   document.getElementById("prevTextDiagnoz").innerText = `${
-    historyList.diagnoz  ? "Попередній діагноз: " + historyList.diagnoz : "_____"
+    historyList.diagnoz  ? `
+    Попередній діагноз: ` + historyList.diagnoz + `
+    `: "_____"
   }`;
 
   localStorage.setItem(
